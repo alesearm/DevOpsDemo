@@ -157,7 +157,7 @@ export class GuiModel {
                             "type": "newButton",
                             "name": { default: "Neues Done"},
                             "icon": "fa-check-circle",
-                            "color": "green",
+                            "color": "blue",
                             "width": 2,
                             "form" : {
                                 "form" : "ToDoForm"
@@ -167,7 +167,7 @@ export class GuiModel {
                             "type": "list",
                             "name": "ToDo",
                             "icon": "fa-user",
-                            "color": "wet-asphalt",
+                            "color": "turquoise",
                             "search": true,
                             "url": "/todo",
                             "form": {
