@@ -3,7 +3,7 @@ export class GuiModel {
 
     private _guiModel = {
         "application": {
-            "title": "DevOpsDemo FS2024",
+            "title": "DevOpsDemo FS2024 von Armin",
             "formList": [
                 {
                     "id": "OwnUserForm",
@@ -107,6 +107,15 @@ export class GuiModel {
                             "width": 2,
                             "newRow": true,
                         },
+                        {
+                            "type": "button",
+                            "name": { default: "Tasks Done" },
+                            "icon": "fa-truck-pickup",
+                            "color": "belize-hole",
+                            "page": "DonePage",
+                            "width": 2,
+                            "newRow": true,
+                        },
                     ]
                 },
                 {
@@ -119,6 +128,35 @@ export class GuiModel {
                             "type": "newButton",
                             "name": { default: "Neues ToDo"},
                             "icon": "fa-user",
+                            "color": "green",
+                            "width": 2,
+                            "form" : {
+                                "form" : "ToDoForm"
+                            }
+                        },
+                        {
+                            "type": "list",
+                            "name": "ToDo",
+                            "icon": "fa-user",
+                            "color": "wet-asphalt",
+                            "search": true,
+                            "url": "/todo",
+                            "form": {
+                                "form": "ToDoForm"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "DonePage",
+                    "elementList": [
+                        {
+                            "type": "backbutton",
+                        },
+                        {
+                            "type": "newButton",
+                            "name": { default: "Neues Done"},
+                            "icon": "fa-check-circle",
                             "color": "green",
                             "width": 2,
                             "form" : {
