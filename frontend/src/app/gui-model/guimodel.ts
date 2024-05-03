@@ -87,6 +87,42 @@ export class GuiModel {
                         }
                     ]
                 },
+                {
+                    "id": "DoneTaskForm",
+                    "title": { default: "Done Task" },
+                    "url": "/donetasks",
+                    "formFieldList": [
+                        {
+                            "id": "title",
+                            "type": "text",
+                            "name": { default: "Titel" },
+                            "required": true,
+                            "width": 2
+                        },
+                        {
+                            "id": "description",
+                            "type": "text",
+                            "name": { default: "Beschreibung" },
+                            "newRow": true,
+                            "maxLength": 4000,
+                            "height": 4,
+                            "width": 2
+                        },
+                        {
+                            "type": "deleteButton",
+                            "name": "Delete"
+                        },
+                        {
+                            "type": "cancelButton",
+                            "name": "Cancel"
+                        },
+                        {
+                            "type": "okButton",
+                            "name": "Ok"
+                        }
+                    ]
+                },
+                
             ],
             "pageList": [
                 {
@@ -160,18 +196,18 @@ export class GuiModel {
                             "color": "blue",
                             "width": 2,
                             "form" : {
-                                "form" : "ToDoForm"
+                                "form" : "DoneTaskForm"
                             }
                         },
                         {
                             "type": "list",
-                            "name": "ToDo",
-                            "icon": "fa-user",
+                            "name": "DoneTasks",
+                            "icon": "fa-check-circle",
                             "color": "turquoise",
                             "search": true,
-                            "url": "/todo",
+                            "url": "/donetasks",
                             "form": {
-                                "form": "ToDoForm"
+                                "form": "DoneTaskForm"
                             }
                         }
                     ]
