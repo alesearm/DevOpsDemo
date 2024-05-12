@@ -5,10 +5,7 @@ import ch.zhaw.iwi.devops.Sonar.SimpleOperation;
 
 public class SimpleOperationTest {
     
-    @Test
-    public void testclassOperation() {
-        SimpleOperation SimpleOperation = new SimpleOperation();
-    }
+
 
     @Test
     public void testDoubleNumber() {
