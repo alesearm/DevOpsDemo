@@ -9,4 +9,9 @@ public class SimpleOperation {
     public static int doubleNumber(int number) {
         return number * 2;
     }
+
+    // Neue Methode zum Verdreifachen einer Zahl
+    public static int tripleNumber(int number) {
+        return number * 3;
+    }
 }
