@@ -4,6 +4,7 @@ pipeline {
     environment {
         DOCKER_HOST = "tcp://host.docker.internal:2375"
         DOCKER_IMAGE = "alesearm/lj11"
+        CONTAINER_NAME = "devopsdemo"
     }
 
     stages {
@@ -31,9 +32,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    sh 'docker ps -q --filter "ancestor=$DOCKER_IMAGE" | xargs -r docker stop'
-                    sh 'docker ps -a -q --filter "ancestor=$DOCKER_IMAGE" | xargs -r docker rm'
-                    sh 'docker run -d -p 9050:8080 $DOCKER_IMAGE'
+                    sh 'docker stop $CONTAINER_NAME'
+                    sh 'docker rm $CONTAINER_NAME'
+                    sh 'docker run  -p 9050:8080 --name $CONTAINER_NAME -d $DOCKER_IMAGE'
                 }
             }
         }
