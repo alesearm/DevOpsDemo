@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKER_IMAGE = "alesearm/lj11"
+        
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Check out the code from the repository
+                git 'https://github.com/alesearm/DevOpsDemo.git'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    // Build the Docker image
+                    sh 'docker build -t $DOCKER_IMAGE .'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'echo test'
+            }
+        }
+
+
+        stage('Deploy') {
+            steps {
+                script {
+                    sh 'docker ps -q --filter "ancestor=$DOCKER_IMAGE" | xargs -r docker stop'
+                    sh 'docker ps -a -q --filter "ancestor=$DOCKER_IMAGE" | xargs -r docker rm'
+                    sh 'docker run -d -p 9050:8080 $DOCKER_IMAGE'
+                }
+            }
+        }
+    }
+
+}
