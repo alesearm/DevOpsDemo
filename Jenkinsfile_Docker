@@ -9,8 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Check out the code from the repository
-                git 'https://github.com/alesearm/DevOpsDemo.git'
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/alesearm/DevOpsDemo.git']])
             }
         }
 
