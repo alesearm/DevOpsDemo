@@ -1,9 +1,13 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'docker:latest'
+           
+        }
+    }
 
     environment {
         DOCKER_IMAGE = "alesearm/lj11"
-        
     }
 
     stages {
@@ -28,7 +32,6 @@ pipeline {
             }
         }
 
-
         stage('Deploy') {
             steps {
                 script {
@@ -39,5 +42,4 @@ pipeline {
             }
         }
     }
-
 }
