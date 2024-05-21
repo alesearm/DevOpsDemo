@@ -29,12 +29,12 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+        stage('Start Container') {
             steps {
                 script {
                     sh 'docker stop $CONTAINER_NAME'
                     sh 'docker rm $CONTAINER_NAME'
-                    sh 'docker run  -p 9050:8080 --name $CONTAINER_NAME -d $DOCKER_IMAGE'
+                    sh 'docker run  -p 9040:8080 --name $CONTAINER_NAME -d $DOCKER_IMAGE'
                 }
             }
         }
