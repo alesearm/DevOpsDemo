@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'docker:latest'
-            args '-v //./pipe/docker_engine://./pipe/docker_engine'
+            args '--privileged -v /var/run/docker.sock:/var/run/docker.sock'
            
         }
     }
