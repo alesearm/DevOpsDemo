@@ -152,6 +152,15 @@ export class GuiModel {
                             "width": 2,
                             "newRow": true,
                         },
+                        {
+                            "type": "button",
+                            "name": { default: "Container" },
+                            "icon": "fa-truck-pickup",
+                            "color": "belize-hole",
+                            "page": "DonePage",
+                            "width": 2,
+                            "newRow": true,
+                        },
                     ]
                 },
                 {
