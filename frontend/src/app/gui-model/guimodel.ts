@@ -154,7 +154,7 @@ export class GuiModel {
                         },
                         {
                             "type": "button",
-                            "name": { default: "Screencast" },
+                            "name": { default: "Container" },
                             "icon": "fa-truck-pickup",
                             "color": "belize-hole",
                             "page": "DonePage",
